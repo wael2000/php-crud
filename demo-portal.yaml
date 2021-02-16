@@ -245,6 +245,8 @@ objects:
                 name: ${NAME}
           - name: MYSQL_DATABASE
             value: ${DATABASE_NAME}
+          - name: MYSQL_DEFAULT_AUTHENTICATION_PLUGIN
+            value: 'mysql_native_password'
           image: ' '
           livenessProbe:
             initialDelaySeconds: 30
