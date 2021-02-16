@@ -214,7 +214,7 @@ objects:
               - /bin/sh
               - '-c'
               - >-
-                hostname && sleep 10 &&  /opt/rh/rh-mysql57/root/usr/bin/mysql -h
+                hostname && sleep 10 &&  mysql -h
                 $MYSQL_SERVICE_HOST -u $MYSQL_USER -p$MYSQL_PASSWORD -D
                 $MYSQL_DATABASE -e 'CREATE TABLE IF NOT EXISTS employees ( id
                 int(11) NOT NULL AUTO_INCREMENT, name varchar(100) NOT NULL,
@@ -280,7 +280,7 @@ objects:
         - mysql
         from:
           kind: ImageStreamTag
-          name: mysql:5.7
+          name: mysql:latest
           namespace: ${NAMESPACE}
       type: ImageChange
     - type: ConfigChange
@@ -299,7 +299,7 @@ parameters:
   displayName: PHP Version
   name: PHP_VERSION
   required: true
-  value: "7.1"
+  value: "latest"
 - description: Maximum amount of memory the Portal container can use.
   displayName: Memory Limit
   name: MEMORY_LIMIT
