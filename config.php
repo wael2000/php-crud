@@ -13,4 +13,6 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
+$ddl_sql = "CREATE TABLE IF NOT EXISTS employees ( id int(11) NOT NULL AUTO_INCREMENT, name varchar(100) NOT NULL, address varchar(255) NOT NULL, salary int(10) NOT NULL, PRIMARY KEY (id) );";
+mysqli_query($link, $ddl_sql);
 ?>
