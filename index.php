@@ -31,7 +31,7 @@
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Employees Details</h2>
-                        <h3 class="pull-left"> getenv("ENV") </h3> 
+                        <h3 class="pull-left"> [ <?php getenv("ENV") ?> ] </h3> 
                         <a href="create.php" class="btn btn-success pull-right">Add New Employee</a>
                     </div>
                     <?php
